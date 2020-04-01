@@ -1,29 +1,28 @@
 import turtle
 
-def drawcurve(turtle, l, o):
+
+def drawcurve(t, lon, o):
     if o == 0:
-        turtle.forward(l)
-        # turtle.forward(l)
+        t.forward(lon)
     else:
-        drawcurve(turtle, 1/3*l, o-1)
-        turtle.left(60)
-        drawcurve(turtle, 1/3*l, o-1)
-        turtle.right(120)
-        drawcurve(turtle, 1/3*l, o-1)
-        turtle.left(60)
-        drawcurve(turtle, 1/3*l, o-1)
+        drawcurve(t, 1/3*lon, o-1)
+        t.left(60)
+        drawcurve(t, 1/3*lon, o-1)
+        t.right(120)
+        drawcurve(t, 1/3*lon, o-1)
+        t.left(60)
+        drawcurve(t, 1/3*lon, o-1)
 
 
-def drawfullcurve(turtle, l, n):
-    drawcurve(turtle, l, n)
-    turtle.right(120)
-    drawcurve(turtle, l, n)
-    turtle.right(120)
-    drawcurve(turtle, l, n)
+def drawfullcurve(t, lon, n):
+    drawcurve(t, lon, n)
+    t.right(120)
+    drawcurve(t, lon, n)
+    t.right(120)
+    drawcurve(t, lon, n)
 
 
-
-
+turtle.speed(0)  # histoire de dessiner un peu plus vite
 turtle.setup(1200, 600)  # J'ai modifié les coordonnées pour voir le dessin entier.
-drawfullcurve(turtle, 300, 2)
+drawfullcurve(turtle, 300, 5)
 turtle.exitonclick()
